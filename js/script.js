@@ -1,4 +1,16 @@
-var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+var argButtonName, buttonTest, buttonRock, buttonPaper, buttonScissors;
+
+buttonTest = document.getElementById('button-rock');
+
+buttonTest = document.getElementById('button-paper');
+
+buttonTest = document.getElementById('button-scissors');
+
+function buttonClicked(argButtonName){
+    clearMessages();
+    console.log(argButtonName + 'został kliknięty');
+
+    var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
 
 function getMoveName(argMoveId) {
     console.log('wywołano funkcję getMoveName z argumentem: '+argMoveId);
@@ -30,12 +42,27 @@ function displayResult (argPlayerMove, argComputerMove) {
 printMessage('Zagrałem:' + argComputerMove + 'a Ty:' + argPlayerMove );
 }
 
-playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce');
-console.log('Wybór ruchu grcza to: ' + playerInput);
-playerMove = getMoveName(playerInput);
-console.log ('ruch gracza to :' + playerMove);
+playerMove = argButtonName;
+console.log('przypisanie dla ' + playerMove + 'wyboru za pomocą funkcji button')
 randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('wyslosowana liczba to:' + randomNumber);
 computerMove = getMoveName(randomNumber);
 console.log('ruch kompuetra to:' + computerMove);
 displayResult(playerMove, computerMove);
+}
+
+buttonTest.addEventListener('click',function() {
+    buttonClicked('kamień');
+});
+
+buttonTest.addEventListener('click',function() {
+    buttonClicked('papier');
+});
+
+buttonTest.addEventListener('click',function() {
+    buttonClicked('nożyce');
+});
+
+
+
+
