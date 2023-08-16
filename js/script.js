@@ -10,7 +10,7 @@ function buttonClicked(argButtonName){
     clearMessages();
     console.log(argButtonName + 'został kliknięty');
 
-    var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+    var computerMove, playerMove, randomNumber;
 
     function getMoveName(argMoveId) {
         console.log('wywołano funkcję getMoveName z argumentem: '+argMoveId);
@@ -49,9 +49,7 @@ function buttonClicked(argButtonName){
     computerMove = getMoveName(randomNumber);
     console.log('ruch kompuetra to:' + computerMove);
     displayResult(playerMove, computerMove);
-
 }
-
 
 buttonRock.addEventListener('click',function() {
     buttonClicked('kamień');
